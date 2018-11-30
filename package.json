@@ -3,13 +3,14 @@
   "version": "7.0.0",
   "license": "Apache",
   "scripts": {
-    "postinstall": "ng build --aot --prod",
     "ng": "ng",
-    "start": "ng serve",
+    "start": "http-server dist/",
     "test": "ng test",
     "test-ci": "TEST_CI=true ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "preinstall": "npm install -g http-server",
+    "postinstall": "ng build --prod"
   },
   "private": true,
   "dependencies": {
