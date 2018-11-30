@@ -1,0 +1,57 @@
+<div class="login-page" [@routerTransition]>
+  <div class="row justify-content-md-center">
+    <div class="col-md-8">
+      <br/>
+      <img src="assets/images/logo.png" />
+      <br/>
+      <h3>Wellcome to IKEA NextGen</h3>
+      <br/>
+      <div class="login-container">
+        <div class="row">
+          <div class="col-md-6">
+            <img src="assets/images/ikea_store.png" class="store-image" />
+          </div>
+          <div class="col-md-6">
+            <div class="form-container">
+              <form role="form">
+                <div class="form-content">
+                  <div class="form-group">
+                    <input type="text" ng-model="name" class="form-control input-underline input-lg" id="" placeholder="{{ 'Email' | translate }}">
+                  </div>
+
+                  <div class="form-group">
+                    <input type="password" class="form-control input-underline input-lg" id="" placeholder="{{ 'Password' | translate }}">
+                  </div>
+                  <a href="#" class="float-right">Forget password</a>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <a class="btn login-btn" [routerLink]="['/dashboard']" (click)="onLoggedin()">{{ 'Log in' | translate }}</a> &nbsp;
+                  </div>
+                </div>
+                <a [routerLink]="['/signup']">{{ 'Register' | translate }}</a>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- Start of Rocket.Chat Livechat Script -->
+<script type="text/javascript">
+  (function(w, d, s, u) {
+    w.RocketChat = function(c) {
+      w.RocketChat._.push(c)
+    };
+    w.RocketChat._ = [];
+    w.RocketChat.url = u;
+    var h = d.getElementsByTagName(s)[0],
+      j = d.createElement(s);
+    j.async = true;
+    j.src = 'https://ikealivechat.mobiliya.com/packages/rocketchat_livechat/assets/rocketchat-livechat.min.js?_=201702160944';
+    h.parentNode.insertBefore(j, h);
+  })(window, document, 'script', 'https://ikealivechat.mobiliya.com/livechat');
+</script>
+<!-- End of Rocket.Chat Livechat Script -->

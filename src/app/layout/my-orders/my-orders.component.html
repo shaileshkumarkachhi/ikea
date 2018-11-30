@@ -1,0 +1,27 @@
+<div [@routerTransition]>
+  <h2 class="text-muted"> <small>My Orders</small></h2>
+  <ngb-tabset>
+    <ngb-tab title="All Orders">
+      <ng-template ngbTabContent>
+        <app-order-row *ngFor="let item of items"></app-order-row>
+      </ng-template>
+    </ngb-tab>
+    <!-- <ngb-tab title="Pendding Orders">
+      <ng-template ngbTabContent>
+        <app-order-row *ngFor="let item of items"></app-order-row>
+      </ng-template>
+    </ngb-tab> -->
+    <ngb-tab title="Open" [disabled]="true">
+      <ng-template ngbTabContent>
+        <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.
+          Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab title="Cancelled" [disabled]="true">
+      <ng-template ngbTabContent>
+        <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.
+          Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+      </ng-template>
+    </ngb-tab>
+  </ngb-tabset>
+</div>

@@ -1,0 +1,38 @@
+.dashboard-image,
+{
+  width: 100%!important;
+}
+
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-image {
+  width: 60%;
+}
+
+.active {
+  color: #3d7fbc!important;
+  border: none;
+  border-bottom: 1px solid #3d7fbc;
+  background-color: transparent!important;
+}
+
+.item-container {
+  background: #FFF;
+  margin: 0px;
+  margin-top: 20px;
+}
+
+.item-header,
+.item-content,
+.item-footer {
+  padding: 1rem;
+  border-bottom: 1px solid #f3f3f8;
+}
+
+.item-image {
+  // width: 60%;
+}
