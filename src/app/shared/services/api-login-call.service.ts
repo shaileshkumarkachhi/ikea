@@ -10,7 +10,6 @@ export class ApiCallLoginService {
   constructor(private http: Http) {  }
 
   post(url, ...args) {
-    debugger;
     const headerOptions = new Headers({
       'Content-Type': 'application/json',
       'x-access-token': localStorage.getItem('auth_token')
