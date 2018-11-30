@@ -3,7 +3,7 @@
   "version": "7.0.0",
   "license": "Apache",
   "scripts": {
-    "postinstall": "ng build --aot -prod",
+    "postinstall": "ng build --aot --prod",
     "ng": "ng",
     "start": "ng serve",
     "test": "ng test",
