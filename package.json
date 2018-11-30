@@ -6,7 +6,6 @@
     "postinstall": "ng build --aot -prod",
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod",
     "test": "ng test",
     "test-ci": "TEST_CI=true ng test",
     "lint": "ng lint",
