@@ -28,14 +28,28 @@
   border-bottom: 1px solid #f3f3f8;
 }
 
-.item-header {
+.header-paid {
   background-image: linear-gradient(225deg, red, red 21px, transparent 10px, transparent);
+}
+
+.header-pending {
+  background-image: linear-gradient(225deg, green, green 21px, transparent 10px, transparent);
 }
 
 .rounded-btn-paid {
   border-radius: 50px;
   color: green;
   background: #FFF;
+  border: 2px solid rgb(242, 242, 242);
+  font-size: 18px;
+  line-height: 40px;
+  padding: 0 25px;
+}
+
+.rounded-btn-pay {
+  border-radius: 50px;
+  background: red;
+  color: #FFF;
   border: 2px solid rgb(242, 242, 242);
   font-size: 18px;
   line-height: 40px;
@@ -57,4 +71,28 @@
 .rounded-btn:active,
 .rounded-btn:visited {
   color: #3d7fbc;
+}
+
+.item-footer-btn {
+  padding: 10px 0px 10px 0px;
+  border-bottom: 1px solid #f3f3f8;
+  text-align: center;
+  cursor: pointer;
+}
+
+.item-footer-btn:hover {
+  color: #3d7fbc;
+  border: 1px solid #3d7fbc;
+}
+
+.icon-badge {
+  vertical-align: middle;
+  border-radius: 50%;
+  background: #f3f4f8;
+  font-size: 24px;
+  color: #a0a7b2;
+}
+
+.qty-btn {
+  border: 1px solid #f3f4f8;
 }

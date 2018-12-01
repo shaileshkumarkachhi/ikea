@@ -5,6 +5,8 @@ import { NgbCarouselModule, NgbAlertModule, NgbModule } from '@ng-bootstrap/ng-b
 import { OrderDetailsRoutingModule } from './order-details-routing.module';
 import { OrderDetailsComponent } from './order-details.component';
 import { StatModule } from '../../shared';
+import { OrderRowComponent } from './components';
+import { TableComponent } from './components';
 
 @NgModule({
     imports: [
@@ -16,7 +18,9 @@ import { StatModule } from '../../shared';
         StatModule
     ],
     declarations: [
-      OrderDetailsComponent
+      OrderDetailsComponent,
+      OrderRowComponent,
+      TableComponent
     ]
 })
 export class OrderDetailsModule {}

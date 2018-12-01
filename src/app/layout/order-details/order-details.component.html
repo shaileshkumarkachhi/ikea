@@ -1,18 +1,48 @@
 <div [@routerTransition]>
-  <h2 class="text-muted"> <small>My Orders > Order Detail</small></h2>
-  <ngb-tabset>
-    <ngb-tab title="Product info">
-      <ng-template ngbTabContent>
+  <h2 class="text-muted"> <small> <a [routerLink]="['/my-orders']" routerLinkActive="router-link-active" >My Orders</a> > Order Details</small></h2>
+  <div class="order-details-page">
+    <app-order-row></app-order-row>
+    <br/>
+    <ngb-tabset>
+      <ngb-tab title="Product info">
+        <ng-template ngbTabContent>
+          <div class="tab-content">
+            <app-table></app-table>
+          </div>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab title="Package detail">
+        <ng-template ngbTabContent>
+          <div class="tab-content">
+            <app-table></app-table>
+          </div>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab title="Assembly & Document">
+        <ng-template ngbTabContent>
+          <div class="tab-content">
+            <div>
+              <h4>Downloads</h4>
+              <p>
+                Only the latest version of document is available for download.
+              </p>
+              <h5>Assembly instruction</h5>
+              <div>
+                401,958,94 &nbsp;&nbsp; <a href="#">IVAR cabinet</a> &nbsp; (PDF)<br/> 401,958,94 &nbsp;&nbsp; <a href="#">IVAR side unit</a> &nbsp; (PDF)
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab title="Reviews">
+        <ng-template ngbTabContent>
+          <div class="tab-content">
+            <h5>What people are talking</h5>
+            <img src="assets/images/reviews.png" class="review-image" alt="">
+          </div>
+        </ng-template>
+      </ngb-tab>
+    </ngb-tabset>
+  </div>
 
-      </ng-template>
-    </ngb-tab>
-    <ngb-tab title="Package detail">
-      <ng-template ngbTabContent>
-      </ng-template>
-    </ngb-tab>
-    <ngb-tab title="Assembly & Document">
-      <ng-template ngbTabContent>
-      </ng-template>
-    </ngb-tab>
-  </ngb-tabset>
 </div>

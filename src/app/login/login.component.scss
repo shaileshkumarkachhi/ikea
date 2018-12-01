@@ -4,6 +4,7 @@ $topnav-background-color: #f3f4f8;
 }
 
 .login-page {
+  overflow: hidden;
   position: absolute;
   top: 0;
   left: 0;
@@ -13,7 +14,7 @@ $topnav-background-color: #f3f4f8;
   background: $topnav-background-color;
   text-align: center;
   // color: #fff;
-  padding: 3em;
+  padding: 0px;
   .col-lg-4 {
     padding: 0;
   }
@@ -67,7 +68,7 @@ $topnav-background-color: #f3f4f8;
     // padding: 0px 0;
   }
   .form-content {
-    padding: 40px 0;
+    padding: 0px 60px;
   }
   .user-avatar {
     -webkit-border-radius: 50%;
@@ -78,6 +79,12 @@ $topnav-background-color: #f3f4f8;
 
 .login-container {
   background: #FFF;
+  .row {
+    margin: 0px;
+    .col-md-6:first-child {
+      padding: 0;
+    }
+  }
 }
 
 .store-image {
@@ -85,8 +92,8 @@ $topnav-background-color: #f3f4f8;
 }
 
 .form-container {
-  padding: 1rem;
-  padding-right: 1.5rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
 }
 
 .login-btn {

@@ -1,0 +1,80 @@
+.dashboard-image,
+{
+  width: 100%!important;
+}
+
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-image {
+  width: 60%;
+}
+
+.active {
+  color: #3d7fbc!important;
+  border: none;
+  border-bottom: 1px solid #3d7fbc;
+  background-color: transparent!important;
+}
+
+.item-container {
+  background: #FFF;
+  margin: 0px;
+  margin-top: 20px;
+}
+
+.item-header,
+.item-content,
+.item-footer {
+  padding: 1rem;
+  border-bottom: 1px solid #f3f3f8;
+}
+
+.item-image {
+  // width: 60%;
+}
+
+.order-details-page {
+  background: #FFF;
+}
+
+.review-image {
+  width: 100%;
+  // margin: 15px;
+}
+
+.reschedule-content {
+  padding: 1rem;
+  min-height: 500px;
+}
+
+.date-container {
+  text-align: center;
+  border: 1px solid #f3f4f8;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.active-date-container,
+.date-container:hover,
+.active-time-container,
+.time-container:hover {
+  background: #3d7fbc;
+  color: #FFF;
+}
+
+.time-container {
+  text-align: center;
+  border: 1px solid #f3f4f8;
+  border-radius: 21px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.date-content,
+.time-content {
+  margin-top: 3rem;
+}

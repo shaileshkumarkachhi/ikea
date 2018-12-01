@@ -1,47 +1,53 @@
 <div class="login-page" [@routerTransition]>
-  <div class="row justify-content-md-center">
-    <div class="col-md-8">
-      <br/>
-      <img src="assets/images/logo.png" />
-      <br/>
-      <h3>Wellcome to IKEA NextGen</h3>
-      <br/>
-      <div class="login-container">
-        <div class="row">
-          <div class="col-md-6">
-            <img src="assets/images/ikea_store.png" class="store-image" />
-          </div>
-          <div class="col-md-6">
-            <div class="form-container">
-              <form role="form">
-                <div class="form-content">
-                  <div class="form-group">
-                    <input type="text" class="form-control input-underline input-lg" id="" placeholder="{{ 'Full Name' | translate }}">
-                  </div>
 
-                  <div class="form-group">
-                    <input type="text" class="form-control input-underline input-lg" id="" placeholder="{{ 'Email' | translate }}">
-                  </div>
+  <div class="login-container">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="assets/images/ikea_store.png" class="store-image" />
+      </div>
+      <div class="col-md-6">
+        <div class="form-container">
 
-                  <div class="form-group">
-                    <input type="password" class="form-control input-underline input-lg" id="" placeholder="{{ 'Password' | translate }}">
-                  </div>
-                  <div class="form-group">
-                    <input type="password" class="form-control input-underline input-lg" id="" placeholder="{{ 'Repeat Password' | translate }}">
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12">
-                    <a class="btn login-btn" [routerLink]="['/dashboard']">{{ 'Register' | translate }}</a>
-                  </div>
-                </div>
-                <a [routerLink]="['/login']">{{ 'Log in' | translate }}</a>
-              </form>
+          <br/>
+          <img src="assets/images/logo.png" />
+          <br/>
+          <h3>Wellcome to IKEA SellNext</h3>
+          <br/>
+          <form role="form">
+            <div class="form-content">
+              <div class="form-group">
+                <input type="text" class="form-control input-underline input-lg" id="" placeholder="{{ 'Full Name' | translate }}">
+              </div>
+
+              <div class="form-group">
+                <input type="text" class="form-control input-underline input-lg" id="" placeholder="{{ 'Email' | translate }}">
+              </div>
+
+              <div class="form-group">
+                <input type="password" class="form-control input-underline input-lg" id="" placeholder="{{ 'Password' | translate }}">
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control input-underline input-lg" id="" placeholder="{{ 'Repeat Password' | translate }}">
+              </div>
+              <br/>
+              <br/>
+              <div class="form-group">
+                <a class="btn login-btn" [routerLink]="['/dashboard']">{{ 'Register' | translate }}</a>
+              </div>
+              <br/>
+              <div class="form-group">
+                Or Sign in with &nbsp;&nbsp; <img src="../../assets/images/Facebook-Logo-rounded.png" alt="">&nbsp;&nbsp; <img src="../../assets/images/google logo.png" alt="">
+              </div>
+              <br/>
+              <div class="form-group">
+                Already have an account? <a [routerLink]="['/login']">{{ 'Log in' | translate }}</a>
+              </div>
+
             </div>
-          </div>
+          </form>
         </div>
       </div>
-
     </div>
   </div>
+
 </div>

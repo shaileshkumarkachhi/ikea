@@ -3,7 +3,7 @@
   <ngb-tabset>
     <ngb-tab title="All Orders">
       <ng-template ngbTabContent>
-        <app-order-row *ngFor="let item of items"></app-order-row>
+        <app-order-row *ngFor="let item of items" [data]="item"></app-order-row>
       </ng-template>
     </ngb-tab>
     <!-- <ngb-tab title="Pendding Orders">
