@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../router.animations';
+import { OrderService } from './orders.service';
 
 @Component({
   selector: 'app-my-orders',
@@ -10,8 +11,9 @@ import { routerTransition } from '../../router.animations';
 export class MyOrdersComponent implements OnInit {
   public alerts: Array<any> = [];
   public sliders: Array<any> = [];
-  items: any[] = [{ paid: true }, { paid: false }, { paid: true }];
-  constructor() {
+  items: any = [];
+
+  constructor(private orderService: OrderService) {
     this.sliders.push(
       {
         imagePath: 'assets/images/slider1.jpg',
@@ -50,7 +52,12 @@ export class MyOrdersComponent implements OnInit {
     );
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.items = this.orderService.getOrders();
+    // this.orderService.getOrders().subscribe(result => {
+    //   this.items = result;
+    // });
+  }
 
   public closeAlert(alert: any) {
     const index: number = this.alerts.indexOf(alert);

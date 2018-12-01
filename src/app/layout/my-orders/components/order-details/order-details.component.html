@@ -3,11 +3,11 @@
     <div class="row">
       <div class="col-md-4">
         Order placed<br>
-        <strong>22 November 2018</strong>
+        <strong>{{data.deliveryDate}}</strong>
       </div>
       <div class="col-md-2">
         Total<br>
-        <strong>$446.00</strong>
+        <strong>${{data.salesOrder.salesOrderPrice.grossAmount}}</strong>
       </div>
       <div class="col-md-3">
         Ship to<br>
@@ -29,7 +29,7 @@
           <strong>Table</strong>
         </div>
         <div>
-          $223.00
+          ${{data.salesOrder.salesOrderPrice.netAmount}}
         </div>
         <div>
           Furniture bought on Pepperfry.com is shipped for free,.

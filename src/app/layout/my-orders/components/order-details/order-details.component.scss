@@ -28,6 +28,10 @@
   border-bottom: 1px solid #f3f3f8;
 }
 
+.item-content {
+  cursor: pointer;
+}
+
 .header-paid {
   background-image: linear-gradient(225deg, red, red 21px, transparent 10px, transparent);
 }

@@ -4,23 +4,15 @@ import { NgbCarouselModule, NgbAlertModule, NgbModule } from '@ng-bootstrap/ng-b
 
 import { DashboardRoutingModule } from './my-orders-routing.module';
 import { MyOrdersComponent } from './my-orders.component';
-import {
-  OredrDetailsComponent
-} from './components';
-import { StatModule } from '../../shared';
+import { OredrDetailsComponent } from './components';
+import { StatModule, ApiCallService } from '../../shared';
+import { HttpModule } from '@angular/http';
+import { OrderService } from './orders.service';
+
 
 @NgModule({
-    imports: [
-        CommonModule,
-        NgbModule,
-        NgbCarouselModule,
-        NgbAlertModule,
-        DashboardRoutingModule,
-        StatModule
-    ],
-    declarations: [
-      MyOrdersComponent,
-      OredrDetailsComponent
-    ]
+  imports: [CommonModule, HttpModule, NgbModule, NgbCarouselModule, NgbAlertModule, DashboardRoutingModule, StatModule],
+  declarations: [MyOrdersComponent, OredrDetailsComponent],
+  providers: [ApiCallService, OrderService]
 })
 export class MyOrdersModule {}

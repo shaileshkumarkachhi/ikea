@@ -9,10 +9,12 @@ import { Router } from '@angular/router';
 export class OredrDetailsComponent implements OnInit {
   @Input()
   data: any;
-  paid: Boolean = true;
+  paid: Boolean = false;
   constructor(private router: Router) {}
   ngOnInit() {
-    this.paid = this.data.paid;
+    if (this.data.salesOrder.paymentStatus === 'CAPTURED') {
+      this.paid = true;
+    }
   }
   orderDetails() {
     this.router.navigate(['/order-details']);
