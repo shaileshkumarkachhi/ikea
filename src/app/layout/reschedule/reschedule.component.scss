@@ -78,3 +78,27 @@
 .time-content {
   margin-top: 3rem;
 }
+
+.btn-container {
+  text-align: center;
+}
+
+.rounded-btn-change {
+  border-radius: 50px;
+  color: #3d7fbc;
+  background: #FFF;
+  border: 2px solid rgb(242, 242, 242);
+  font-size: 18px;
+  line-height: 40px;
+  padding: 0 25px;
+}
+
+.rounded-btn-cancel {
+  border-radius: 50px;
+  // color: green;
+  background: #FFF;
+  border: 2px solid rgb(242, 242, 242);
+  font-size: 18px;
+  line-height: 40px;
+  padding: 0 25px;
+}
