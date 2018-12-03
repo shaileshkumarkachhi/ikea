@@ -1,20 +1,20 @@
 <div [@routerTransition]>
   <h4 class="text-muted"> <small> <a [routerLink]="['/my-orders']" routerLinkActive="router-link-active" >My Orders</a> > Order Details</small></h4>
   <div class="order-details-page">
-    <app-order-row></app-order-row>
+    <app-order-row [data]="order"></app-order-row>
     <br/>
     <ngb-tabset>
       <ngb-tab title="Product info">
         <ng-template ngbTabContent>
           <div class="tab-content">
-            <app-table></app-table>
+            <app-table [data]="itemInfo"></app-table>
           </div>
         </ng-template>
       </ngb-tab>
       <ngb-tab title="Package detail">
         <ng-template ngbTabContent>
           <div class="tab-content">
-            <app-table></app-table>
+            <app-table [data]="itemInfo"></app-table>
           </div>
         </ng-template>
       </ngb-tab>

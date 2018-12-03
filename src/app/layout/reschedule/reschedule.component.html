@@ -1,103 +1,96 @@
 <div [@routerTransition]>
   <h4 class="text-muted"> <small><a [routerLink]="['/my-orders']" routerLinkActive="router-link-active" >My Orders</a> > Change Delivery Time</small></h4>
   <div class="order-details-page">
-    <app-order-row></app-order-row>
+    <app-order-row [data]="order"></app-order-row>
     <div class="reschedule-content">
       <p>Continue pick a desire date for delivery</p>
-      <div class="date-content">
-        <h5>Available dates</h5>
-        <div class="row">
-          <div class="col-md-9">
-            <div class="row">
-              <div class="col-md-2">
-                <div class="date-container">
-                  <small>Today</small>
-                  <h4>26</h4>
-                  <p>NOV</p>
-                </div>
-              </div>
-              <div class="col-md-2">
-                <div class="date-container active-date-container">
-                  <small>Today</small>
-                  <h4>27</h4>
-                  <p>NOV</p>
-                </div>
-              </div>
-              <div class="col-md-2">
-                <div class="date-container">
-                  <small>Today</small>
-                  <h4>28</h4>
-                  <p>NOV</p>
-                </div>
-              </div>
-              <div class="col-md-2">
-                <div class="date-container">
-                  <small>Today</small>
-                  <h4>29</h4>
-                  <p>NOV</p>
-                </div>
-              </div>
-              <div class="col-md-2">
-                <div class="date-container">
-                  <small>Today</small>
-                  <h4>30</h4>
-                  <p>NOV</p>
-                </div>
-              </div>
-              <div class="col-md-2">
-                <div class="date-container">
-                  <small>Today</small>
-                  <h4>01</h4>
-                  <p>DEC</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="time-content">
-        <h5>Available delivery time</h5>
-        <div class="row">
-          <div class="col-md-9">
-            <div class="row">
-              <div class="col-md-2">
-                <div class="time-container active-time-container">
-                  2-3 PM
-                </div>
-              </div>
-              <div class="col-md-2">
-                <div class="time-container">
-                  3-4 PM
-                </div>
-              </div>
-              <div class="col-md-2">
-                <div class="time-container">
-                  4-5 PM
-                </div>
-              </div>
-              <div class="col-md-2">
-                <div class="time-container">
-                  5-6 PM
-                </div>
-              </div>
-              <div class="col-md-2">
-                <div class="time-container">
-                  6-7 PM
-                </div>
-              </div>
-              <div class="col-md-2">
-                <div class="time-container">
-                  7-8 PM
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
+
+      <ngb-tabset>
+        <ngb-tab title="From">
+          <ng-template ngbTabContent>
+            <div class="tab-content">
+              <div class="date-content">
+                <h5>Available dates</h5>
+                <div class="row">
+                  <div class="col-md-9">
+                    <div class="row">
+                      <div class="col-md-2" *ngFor="let date of dates; let i=index" (click)="setFromDate(i)">
+                        <div class="date-container {{i === fromActiveIndex ? 'active-time-container' : ''}}">
+                          <small>{{date.dayName}}</small>
+                          <h4>{{date.day}}</h4>
+                          <p>{{date.month}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="time-content">
+                <h5>Available delivery time</h5>
+                <div class="row">
+                  <div class="col-md-9">
+                    <div class="row">
+                      <div class="col-md-2" *ngFor="let time of timeSlots; let i=index" (click)="setFromTime(i)">
+                        <div class="time-container {{i === fromActiveIndex ? 'active-time-container' : ''}}">
+                          {{time.from + '-' + time.to}} PM
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </ngb-tab>
+        <ngb-tab title="To">
+          <ng-template ngbTabContent>
+            <div class="tab-content">
+              <div class="date-content">
+                <h5>Available dates</h5>
+                <div class="row">
+                  <div class="col-md-9">
+                    <div class="row">
+                      <div class="col-md-2" *ngFor="let date of dates; let i=index" (click)="setToDate(i)">
+                        <div class="date-container {{i === toActiveIndex ? 'active-time-container' : ''}}">
+                          <small>{{date.dayName}}</small>
+                          <h4>{{date.day}}</h4>
+                          <p>{{date.month}}</p>
+                        </div>
+                      </div>
+                      <!-- <div class="col-md-2">
+                                <div class="time-container active-time-container">
+                                  2-3 PM
+                                </div>
+                              </div> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="time-content">
+                <h5>Available delivery time</h5>
+                <div class="row">
+                  <div class="col-md-9">
+                    <div class="row">
+                      <div class="col-md-2" *ngFor="let time of timeSlots; let i=index" (click)="setToTime(i)">
+                        <div class="time-container {{i === toActiveIndex ? 'active-time-container' : ''}}">
+                          {{time.from + '-' + time.to}} PM
+                        </div>
+                        <!-- <div class="time-container active-time-container">
+                                2-3 PM
+                              </div> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </ngb-tab>
+      </ngb-tabset>
       <div class="btn-container">
-        <span class="btn rounded-btn-change"> Change </span> &nbsp;&nbsp;
-        <span class="btn rounded-btn-cancel"> Cancel </span>
+        <span class="btn rounded-btn-change" (click)="changeDeliveryDate()"> Change </span> &nbsp;&nbsp;
+        <span class="btn rounded-btn-cancel" routerLink="/my-orders"> Cancel </span>
       </div>
     </div>
   </div>

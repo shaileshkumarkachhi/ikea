@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../router.animations';
 import { Router } from '@angular/router';
+import { OrderService } from '../my-orders/orders.service';
 
 @Component({
     selector: 'app-dashboard',
@@ -11,8 +12,8 @@ import { Router } from '@angular/router';
 export class DashboardComponent implements OnInit {
     public alerts: Array<any> = [];
     public sliders: Array<any> = [];
-
-    constructor( private router: Router) {
+    orders: any = [];
+    constructor( private router: Router, private orderService: OrderService) {
         this.sliders.push(
             {
                 imagePath: 'assets/images/slider1.jpg',
@@ -53,7 +54,9 @@ export class DashboardComponent implements OnInit {
         );
     }
 
-    ngOnInit() {}
+    ngOnInit() {
+      this.orders = this.orderService.getOrders();
+    }
 
     public closeAlert(alert: any) {
         const index: number = this.alerts.indexOf(alert);

@@ -1,61 +1,70 @@
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../router.animations';
-
+import { ActivatedRoute } from '@angular/router';
+import { OrderService } from '../my-orders/orders.service';
 @Component({
-    selector: 'app-order-details',
-    templateUrl: './order-details.component.html',
-    styleUrls: ['./order-details.component.scss'],
-    animations: [routerTransition()]
+  selector: 'app-order-details',
+  templateUrl: './order-details.component.html',
+  styleUrls: ['./order-details.component.scss'],
+  animations: [routerTransition()]
 })
 export class OrderDetailsComponent implements OnInit {
-    public alerts: Array<any> = [];
-    public sliders: Array<any> = [];
-    items: any[] = [1, 2, 3];
-    constructor() {
-        this.sliders.push(
-            {
-                imagePath: 'assets/images/slider1.jpg',
-                label: 'First slide label',
-                text:
-                    'Nulla vitae elit libero, a pharetra augue mollis interdum.'
-            },
-            {
-                imagePath: 'assets/images/slider2.jpg',
-                label: 'Second slide label',
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-            },
-            {
-                imagePath: 'assets/images/slider3.jpg',
-                label: 'Third slide label',
-                text:
-                    'Praesent commodo cursus magna, vel scelerisque nisl consectetur.'
-            }
-        );
+  public alerts: Array<any> = [];
+  public sliders: Array<any> = [];
+  id: any;
+  itemInfo: any = [];
+  order: any;
+  items: any[] = [1, 2, 3];
+  constructor(private activatedroute: ActivatedRoute, private orderService: OrderService) {
+    this.sliders.push(
+      {
+        imagePath: 'assets/images/slider1.jpg',
+        label: 'First slide label',
+        text: 'Nulla vitae elit libero, a pharetra augue mollis interdum.'
+      },
+      {
+        imagePath: 'assets/images/slider2.jpg',
+        label: 'Second slide label',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+      },
+      {
+        imagePath: 'assets/images/slider3.jpg',
+        label: 'Third slide label',
+        text: 'Praesent commodo cursus magna, vel scelerisque nisl consectetur.'
+      }
+    );
 
-        this.alerts.push(
-            {
-                id: 1,
-                type: 'success',
-                message: `Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    this.alerts.push(
+      {
+        id: 1,
+        type: 'success',
+        message: `Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Voluptates est animi quibusdam praesentium quam, et perspiciatis,
                 consectetur velit culpa molestias dignissimos
                 voluptatum veritatis quod aliquam! Rerum placeat necessitatibus, vitae dolorum`
-            },
-            {
-                id: 2,
-                type: 'warning',
-                message: `Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      },
+      {
+        id: 2,
+        type: 'warning',
+        message: `Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Voluptates est animi quibusdam praesentium quam, et perspiciatis,
                 consectetur velit culpa molestias dignissimos
                 voluptatum veritatis quod aliquam! Rerum placeat necessitatibus, vitae dolorum`
-            }
-        );
-    }
+      }
+    );
+  }
 
-    ngOnInit() {}
-
-    public closeAlert(alert: any) {
-        const index: number = this.alerts.indexOf(alert);
-        this.alerts.splice(index, 1);
+  ngOnInit() {
+    this.id = this.activatedroute.snapshot.params['id'];
+    this.order = this.orderService.getOrder(this.id);
+    for (let index = 0; index < this.order.salesOrder.salesOrderItemList.length; index++) {
+      const element = this.order.salesOrder.salesOrderItemList[index];
+      this.itemInfo.push(element);
     }
+  }
+
+  public closeAlert(alert: any) {
+    const index: number = this.alerts.indexOf(alert);
+    this.alerts.splice(index, 1);
+  }
 }

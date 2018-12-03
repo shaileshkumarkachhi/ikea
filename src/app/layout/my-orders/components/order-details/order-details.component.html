@@ -1,54 +1,55 @@
 <div class="row item-container">
-  <div class="col-md-12 item-header {{!paid ? 'header-paid': 'header-pending'}}">
+  <div class="col-md-12 item-header {{getHeaderClass()}}">
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-6">
         Order placed<br>
-        <strong>{{data.deliveryDate}}</strong>
+        <strong>{{data.deliveryDateFrom}} To {{data.deliveryDateFrom}} </strong>
       </div>
       <div class="col-md-2">
         Total<br>
-        <strong>${{data.salesOrder.salesOrderPrice.grossAmount}}</strong>
+        <strong>{{currencySymbol(data.salesOrder.salesOrderPrice.currencyCode)}}{{data.salesOrder.salesOrderPrice.grossAmount}}</strong>
       </div>
-      <div class="col-md-3">
-        Ship to<br>
-        <strong>Debbie M Hart</strong>
+      <div class="col-md-2">
+        Net<br>
+        <strong>{{currencySymbol(data.salesOrder.salesOrderPrice.currencyCode)}}{{data.salesOrder.salesOrderPrice.netAmount}}</strong>
       </div>
-      <div class="col-md-3">
-        Oredr Status<br>
-        <strong>Delivery Picked up</strong>
+      <div class="col-md-2">
+        Vat<br>
+        <strong>{{currencySymbol(data.salesOrder.salesOrderPrice.currencyCode)}}{{data.salesOrder.salesOrderPrice.vatAmount}}</strong>
       </div>
     </div>
   </div>
-  <div class="col-md-12 item-content" (click)="orderDetails()">
+  <div class="col-md-12 item-content" (click)="orderDetails(data.salesOrder.id)">
     <div class="row">
       <div class="col-md-3">
         <img src="assets/images/table.png" class="item-image" alt="">
       </div>
       <div class="col-md-9">
         <div>
-          <strong>Table</strong>
+          <strong>{{data.salesOrder.id}}</strong>
         </div>
         <div>
-          ${{data.salesOrder.salesOrderPrice.netAmount}}
+          Remaining balance <strong>{{currencySymbol(data.balanceToPayAmount.currencyCode)}}{{data.balanceToPayAmount.amount}}</strong>
         </div>
         <div>
           Furniture bought on Pepperfry.com is shipped for free,.
         </div>
         <div>
-          QTY&nbsp;&nbsp; <span class="btn qty-btn">2</span>
+          Items&nbsp;&nbsp; <span class="btn qty-btn">{{data.salesOrder.salesOrderItemList.length}}</span>
         </div>
-        <span class="btn rounded-btn-paid float-right" *ngIf="paid" disabled> <i class="fa fa-check" aria-hidden="true"></i> Paid </span>
-        <div *ngIf="!paid" class="float-right"><small><i>Payment is not done.</i></small>&nbsp;&nbsp;<span class="btn rounded-btn-pay" disabled>  Pay now </span></div>
+        <span class="btn rounded-btn-paid float-right" *ngIf="paid  && data.balanceToPayAmount.amount == 'null'" disabled> <i class="fa fa-check" aria-hidden="true"></i> Paid </span>
+        <div *ngIf="!paid && data.balanceToPayAmount.amount != 'null' && data.salesOrder.salesOrderPrice.grossAmount == 'null'" class="float-right"><small><i>Payment is not done.</i></small>&nbsp;&nbsp;<span class="btn rounded-btn-pay" disabled>  Pay now </span></div>
+        <div *ngIf="data.balanceToPayAmount.amount != 'null' && data.salesOrder.salesOrderPrice.grossAmount != 'null'" class="float-right"><small><i> Remaining balance&nbsp; <strong>{{currencySymbol(data.balanceToPayAmount.currencyCode)}}{{data.balanceToPayAmount.amount}}</strong></i></small>&nbsp;&nbsp;<span class="btn rounded-btn-pay-remaining" disabled>  Pay now </span></div>
       </div>
     </div>
   </div>
   <div class="col-md-12">
     <div class="row">
       <div class="col-md-2 item-footer-btn "><span class="badge icon-badge"><i class="fa fa-map-marker" aria-hidden="true"></i></span> &nbsp; Track Order</div>
-      <div class="col-md-2 item-footer-btn " (click)="deliveryTimeChange()"><span class="badge icon-badge"><i class="fa fa-repeat" aria-hidden="true" ></i></span> &nbsp; Reschedule</div>
+      <div class="col-md-2 item-footer-btn " (click)="deliveryTimeChange(data.salesOrder.id)"><span class="badge icon-badge"><i class="fa fa-repeat" aria-hidden="true" ></i></span> &nbsp; Reschedule</div>
       <div class="col-md-2 item-footer-btn "><span class="badge icon-badge"><i class="fa fa-comment-o" aria-hidden="true"></i></span>&nbsp; Feedback</div>
       <div class="col-md-3 item-footer-btn "><span class="badge icon-badge"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>&nbsp;Write Review</div>
-      <div class="col-md-3 item-footer-btn "><span class="badge icon-badge"><i class="fa fa-fax" aria-hidden="true"></i></span> &nbsp; Order Details</div>
+      <div class="col-md-3 item-footer-btn " (click)="orderDetails(data.salesOrder.id)"><span class="badge icon-badge"><i class="fa fa-fax" aria-hidden="true"></i></span> &nbsp; Order Details</div>
     </div>
   </div>
 </div>

@@ -5,7 +5,7 @@ import { NgbCarouselModule, NgbAlertModule, NgbModule } from '@ng-bootstrap/ng-b
 import { DashboardRoutingModule } from './my-orders-routing.module';
 import { MyOrdersComponent } from './my-orders.component';
 import { OredrDetailsComponent } from './components';
-import { StatModule, ApiCallService } from '../../shared';
+import { StatModule, ApiCallService, CurrencySymbolsService } from '../../shared';
 import { HttpModule } from '@angular/http';
 import { OrderService } from './orders.service';
 
@@ -13,6 +13,6 @@ import { OrderService } from './orders.service';
 @NgModule({
   imports: [CommonModule, HttpModule, NgbModule, NgbCarouselModule, NgbAlertModule, DashboardRoutingModule, StatModule],
   declarations: [MyOrdersComponent, OredrDetailsComponent],
-  providers: [ApiCallService, OrderService]
+  providers: [ApiCallService, OrderService, CurrencySymbolsService]
 })
 export class MyOrdersModule {}

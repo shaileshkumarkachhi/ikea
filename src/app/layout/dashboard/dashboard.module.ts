@@ -9,11 +9,14 @@ import {
     NotificationComponent,
     ChatComponent
 } from './components';
-import { StatModule } from '../../shared';
+import { StatModule, ApiCallService } from '../../shared';
+import { OrderService } from '../my-orders/orders.service';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
     imports: [
         CommonModule,
+        HttpModule,
         NgbCarouselModule,
         NgbAlertModule,
         DashboardRoutingModule,
@@ -24,6 +27,7 @@ import { StatModule } from '../../shared';
         TimelineComponent,
         NotificationComponent,
         ChatComponent
-    ]
+    ],
+    providers: [ ApiCallService, OrderService]
 })
 export class DashboardModule {}

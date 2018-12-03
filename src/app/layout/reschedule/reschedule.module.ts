@@ -4,13 +4,17 @@ import { NgbCarouselModule, NgbAlertModule, NgbModule } from '@ng-bootstrap/ng-b
 
 import { RescheduleRoutingModule } from './reschedule-routing.module';
 import { RescheduleComponent } from './reschedule.component';
-import { StatModule } from '../../shared';
+import { StatModule, ApiCallService, CurrencySymbolsService } from '../../shared';
 import { OrderRowComponent } from './components';
 import { TableComponent } from './components';
+import { OrderService } from '../my-orders/orders.service';
+import { HttpModule } from '@angular/http';
+import { RescheduleService } from './reschedule.service';
 
 @NgModule({
     imports: [
         CommonModule,
+        HttpModule,
         NgbModule,
         NgbCarouselModule,
         NgbAlertModule,
@@ -21,6 +25,12 @@ import { TableComponent } from './components';
       RescheduleComponent,
       OrderRowComponent,
       TableComponent
+    ],
+    providers: [
+      ApiCallService,
+      OrderService,
+      CurrencySymbolsService,
+      RescheduleService
     ]
 })
 export class RescheduleModule {}
