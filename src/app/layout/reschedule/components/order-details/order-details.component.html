@@ -37,9 +37,9 @@
         <div>
           Items&nbsp;&nbsp; <span class="btn qty-btn">{{data.salesOrder.salesOrderItemList.length}}</span>
         </div>
-        <span class="btn rounded-btn-paid float-right" *ngIf="paid  && data.balanceToPayAmount.amount == 'null'" disabled> <i class="fa fa-check" aria-hidden="true"></i> Paid </span>
-        <div *ngIf="!paid && data.balanceToPayAmount.amount != 'null' && data.salesOrder.salesOrderPrice.grossAmount == 'null'" class="float-right"><small><i>Payment is not done.</i></small>&nbsp;&nbsp;<span class="btn rounded-btn-pay" disabled>  Pay now </span></div>
-        <div *ngIf="data.balanceToPayAmount.amount != 'null' && data.salesOrder.salesOrderPrice.grossAmount != 'null'" class="float-right"><small><i> Remaining balance&nbsp; <strong>{{currencySymbol(data.balanceToPayAmount.currencyCode)}}{{data.balanceToPayAmount.amount}}</strong></i></small>&nbsp;&nbsp;<span class="btn rounded-btn-pay-remaining" disabled>  Pay now </span></div>
+        <!-- <span class="btn rounded-btn-paid float-right" *ngIf="paid  && data.balanceToPayAmount.amount == 'null'" disabled> <i class="fa fa-check" aria-hidden="true"></i> Paid </span> -->
+        <!-- <div *ngIf="!paid && data.balanceToPayAmount.amount != 'null' && data.salesOrder.salesOrderPrice.grossAmount == 'null'" class="float-right"><small><i>Payment is not done.</i></small>&nbsp;&nbsp;<span class="btn rounded-btn-pay" disabled>  Pay now </span></div> -->
+        <!-- <div *ngIf="data.balanceToPayAmount.amount != 'null' && data.salesOrder.salesOrderPrice.grossAmount != 'null'" class="float-right"><small><i> Remaining balance&nbsp; <strong>{{currencySymbol(data.balanceToPayAmount.currencyCode)}}{{data.balanceToPayAmount.amount}}</strong></i></small>&nbsp;&nbsp;<span class="btn rounded-btn-pay-remaining" disabled>  Pay now </span></div> -->
       </div>
     </div>
   </div>
