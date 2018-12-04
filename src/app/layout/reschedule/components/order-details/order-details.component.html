@@ -2,7 +2,7 @@
   <div class="col-md-12 item-header {{getHeaderClass()}}">
     <div class="row">
       <div class="col-md-6 row-top-header">
-        Order placed<br>
+        Order placed on<br>
         <strong>{{data.deliveryDateFrom}} To {{data.deliveryDateFrom}} </strong>
       </div>
       <div class="col-md-2 row-top-header">
@@ -26,10 +26,10 @@
       </div>
       <div class="col-md-9">
         <div>
-          <strong>{{data.salesOrder.id}}</strong>
+          <br/> Order No: <strong>{{data.salesOrder.id}}</strong>
         </div>
         <div>
-          Remaining balance <strong>{{currencySymbol(data.balanceToPayAmount.currencyCode)}}{{data.balanceToPayAmount.amount}}</strong>
+          Remaining Balance <strong>{{currencySymbol(data.balanceToPayAmount.currencyCode)}}{{data.balanceToPayAmount.amount}}</strong>
         </div>
         <div>
 
