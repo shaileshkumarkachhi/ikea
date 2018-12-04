@@ -26,9 +26,9 @@ export class LoginComponent implements OnInit {
     ngOnInit() {}
 
     onLoggedin() {
-      // this.loginService.login( 'shailesh', 123456 ).subscribe(result => {
+      this.loginService.login( 'Zilpelwar', 123456 ).subscribe(result => {
 
-      // });
+      });
         localStorage.setItem('isLoggedin', 'true');
     }
 }
