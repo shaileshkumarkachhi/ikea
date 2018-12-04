@@ -1,12 +1,12 @@
 <div [@routerTransition]>
   <h4 class="text-muted"> <small>Dashboard</small></h4>
 
-  <div class="row">
+  <div class="row" (click)="myOrders()">
     <div class="col-xl-3 col-lg-6">
       <app-stat [icon]="'fa-check-circle-o'" [count]="orders.length" [label]="'Order Placed'"></app-stat>
     </div>
     <div class="col-xl-3 col-lg-6">
-      <app-stat [icon]="'fa-map-marker'" [count]="12" [label]="'Cart Items'"></app-stat>
+      <app-stat [icon]="'fa-shopping-cart'" [count]="12" [label]="'Cart Items'"></app-stat>
     </div>
     <div class="col-xl-3 col-lg-6">
       <app-stat [icon]="'fa-shopping-cart'" [count]="124" [label]="'Bought Items'"></app-stat>

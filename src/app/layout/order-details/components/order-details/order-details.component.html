@@ -1,19 +1,19 @@
 <div class="row item-container">
   <div class="col-md-12 item-header {{getHeaderClass()}}">
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-6 row-top-header">
         Order placed<br>
         <strong>{{data.deliveryDateFrom}} To {{data.deliveryDateFrom}} </strong>
       </div>
-      <div class="col-md-2">
+      <div class="col-md-2  row-top-header">
         Total<br>
         <strong>{{currencySymbol(data.salesOrder.salesOrderPrice.currencyCode)}}{{data.salesOrder.salesOrderPrice.grossAmount}}</strong>
       </div>
-      <div class="col-md-2">
+      <div class="col-md-2  row-top-header">
         Net<br>
         <strong>{{currencySymbol(data.salesOrder.salesOrderPrice.currencyCode)}}{{data.salesOrder.salesOrderPrice.netAmount}}</strong>
       </div>
-      <div class="col-md-2">
+      <div class="col-md-2  row-top-header">
         Vat<br>
         <strong>{{currencySymbol(data.salesOrder.salesOrderPrice.currencyCode)}}{{data.salesOrder.salesOrderPrice.vatAmount}}</strong>
       </div>
@@ -26,6 +26,7 @@
       </div>
       <div class="col-md-9">
         <div>
+          <br/>
           <strong>{{data.salesOrder.id}}</strong>
         </div>
         <div>

@@ -72,6 +72,7 @@ export class RescheduleComponent implements OnInit {
     this.id = this.activatedroute.snapshot.params['id'];
     this.order = this.orderService.getOrder(this.id);
     const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const monthNames = ['JAN', 'FEB', 'MAR', 'APR', 'May', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
 
     this.currentTimeWindow = this.rescheduleDeliveryService.getDeliveryTimeWindow(this.order.salesOrder.id);
     for (let index = 0; index < this.currentTimeWindow.length; index++) {
@@ -82,7 +83,7 @@ export class RescheduleComponent implements OnInit {
       const dayNumber = dateObj.getUTCDay();
       const year = dateObj.getUTCFullYear();
       const time = dateObj.getUTCHours();
-      this.dates.push({ day: day, month: month, dayName: days[dayNumber] });
+      this.dates.push({ day: day, month: monthNames[month], dayName: days[dayNumber] });
       this.timeSlots.push({
         from: time,
         to: time + 2

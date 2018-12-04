@@ -18,8 +18,8 @@
                       <div class="col-md-2" *ngFor="let date of dates; let i=index" (click)="setFromDate(i)">
                         <div class="date-container {{i === fromActiveIndex ? 'active-time-container' : ''}}">
                           <small>{{date.dayName}}</small>
-                          <h4>{{date.day}}</h4>
-                          <p>{{date.month}}</p>
+                          <h4 class="font-bold">{{date.day}}</h4>
+                          <h4 class="font-bold">{{date.month}}</h4>
                         </div>
                       </div>
                     </div>
@@ -54,8 +54,8 @@
                       <div class="col-md-2" *ngFor="let date of dates; let i=index" (click)="setToDate(i)">
                         <div class="date-container {{i === toActiveIndex ? 'active-time-container' : ''}}">
                           <small>{{date.dayName}}</small>
-                          <h4>{{date.day}}</h4>
-                          <p>{{date.month}}</p>
+                          <h4 class="font-bold">{{date.day}}</h4>
+                          <h4 class="font-bold">{{date.month}}</h4>
                         </div>
                       </div>
                       <!-- <div class="col-md-2">

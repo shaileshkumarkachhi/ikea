@@ -99,8 +99,8 @@
 }
 
 .item-footer-btn:hover {
-  color: #3d7fbc;
-  border: 1px solid #3d7fbc;
+  color: #FFF;
+  background: #2f19bc;
 }
 
 .icon-badge {
@@ -112,5 +112,9 @@
 }
 
 .qty-btn {
-  border: 1px solid #f3f4f8;
+  border: 1px solid #999999;
+}
+
+.row-top-header {
+  padding-bottom: 10px;
 }
